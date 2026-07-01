@@ -201,13 +201,19 @@
           "raw": "{\r\n    \"name\":\"john\",\"email\":\"robiat@gmail.com\",\"password\":\"robiah\"\r\n}"
         },
         "url": {
-          "raw": "{{URL}}/jobs/6a3e4f27cff1247f11bbec268",
+          "raw": "{{URL}}/jobs/:id",
           "host": [
             "{{URL}}"
           ],
           "path": [
             "jobs",
-            "6a3e4f27cff1247f11bbec268"
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6a4104fd0fb7b0919aad1c4d"
+            }
           ]
         }
       },
@@ -237,13 +243,19 @@
           }
         },
         "url": {
-          "raw": "{{URL}}/jobs/6a4104fd0fb7b0919aad1c4d",
+          "raw": "{{URL}}/jobs/:id",
           "host": [
             "{{URL}}"
           ],
           "path": [
             "jobs",
-            "6a4104fd0fb7b0919aad1c4d"
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "6"
+            }
           ]
         }
       },
@@ -280,13 +292,19 @@
           }
         },
         "url": {
-          "raw": "{{URL}}/jobs/6a4104fd0fb7b0919aad1c4d",
+          "raw": "{{URL}}/jobs/:id",
           "host": [
             "{{URL}}"
           ],
           "path": [
             "jobs",
-            "6a4104fd0fb7b0919aad1c4d"
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": ""
+            }
           ]
         }
       },
