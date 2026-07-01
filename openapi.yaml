@@ -101,7 +101,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /jobs/6a3e4f27cff1247f11bbec268:
+  /jobs/{id}:
     get:
       tags:
         - default
@@ -116,12 +116,16 @@ paths:
           example: >-
             Bearer
             eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
-  /jobs/6a4104fd0fb7b0919aad1c4d:
     patch:
       tags:
         - default
@@ -144,6 +148,11 @@ paths:
           example: >-
             Bearer
             eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
@@ -163,6 +172,11 @@ paths:
           example: >-
             Bearer
             eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
       responses:
         '200':
           description: Successful response
