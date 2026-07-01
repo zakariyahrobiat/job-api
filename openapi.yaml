@@ -1,0 +1,171 @@
+openapi: 3.0.0
+info:
+  title: jobApi
+  version: 1.0.0
+servers:
+  - url: http://{{url}}
+components:
+  securitySchemes:
+    noauthAuth:
+      type: http
+      scheme: noauth
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /auth/register:
+    post:
+      tags:
+        - default
+      summary: register user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: annah
+                email: robiat10@gmail.com
+                password: robiah12
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/login:
+    post:
+      tags:
+        - default
+      summary: login user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: robiat10@gmail.com
+                password: robiah12
+      security:
+        - noauthAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs:
+    post:
+      tags:
+        - default
+      summary: create job
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                company: facebook
+                position: frontend
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: get jobs
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs/6a3e4f27cff1247f11bbec268:
+    get:
+      tags:
+        - default
+      summary: get job
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs/6a4104fd0fb7b0919aad1c4d:
+    patch:
+      tags:
+        - default
+      summary: update job
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                company: twitter
+                position: full stack
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - default
+      summary: delete job
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          example: >-
+            Bearer
+            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+

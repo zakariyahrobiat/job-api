@@ -5,6 +5,9 @@ const cors = require("cors");
 const rateLimiter = require("express-rate-limit");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./swagger");
+const YAML = require("yamljs");
+
+const swaggerDocument = YAML.load("./openapi.yaml");
 
 const express = require("express");
 const app = express();
@@ -31,7 +34,7 @@ app.use(
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get("/", (req, res) => {
   res.send("Jobs API");
