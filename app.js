@@ -4,7 +4,6 @@ const helmet = require("helmet");
 const cors = require("cors");
 const rateLimiter = require("express-rate-limit");
 const swaggerUi = require("swagger-ui-express");
-const swaggerSpec = require("./swagger");
 const YAML = require("yamljs");
 
 const swaggerDocument = YAML.load("./openapi.yaml");
