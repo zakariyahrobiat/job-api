@@ -48,13 +48,8 @@
         },
         "url": {
           "raw": "{{URL}}/auth/register",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "auth",
-            "register"
-          ]
+          "host": ["{{URL}}"],
+          "path": ["auth", "register"]
         }
       },
       "response": []
@@ -93,13 +88,8 @@
         },
         "url": {
           "raw": "{{URL}}/auth/login",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "auth",
-            "login"
-          ]
+          "host": ["{{URL}}"],
+          "path": ["auth", "login"]
         }
       },
       "response": []
@@ -129,12 +119,8 @@
         },
         "url": {
           "raw": "{{URL}}/jobs",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "jobs"
-          ]
+          "host": ["{{URL}}"],
+          "path": ["jobs"]
         }
       },
       "response": []
@@ -162,12 +148,8 @@
         },
         "url": {
           "raw": "{{URL}}/jobs",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "jobs"
-          ]
+          "host": ["{{URL}}"],
+          "path": ["jobs"]
         }
       },
       "response": []
@@ -202,19 +184,8 @@
         },
         "url": {
           "raw": "{{URL}}/jobs/:id",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "jobs",
-            ":id"
-          ],
-          "variable": [
-            {
-              "key": "id",
-              "value": "6a4104fd0fb7b0919aad1c4d"
-            }
-          ]
+          "host": ["{{URL}}"],
+          "path": ["jobs", "{{id}}"]
         }
       },
       "response": []
@@ -244,19 +215,8 @@
         },
         "url": {
           "raw": "{{URL}}/jobs/:id",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "jobs",
-            ":id"
-          ],
-          "variable": [
-            {
-              "key": "id",
-              "value": "6"
-            }
-          ]
+          "host": ["{{URL}}"],
+          "path": ["jobs", "{{id}}"]
         }
       },
       "response": []
@@ -293,19 +253,7 @@
         },
         "url": {
           "raw": "{{URL}}/jobs/:id",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "jobs",
-            ":id"
-          ],
-          "variable": [
-            {
-              "key": "id",
-              "value": ""
-            }
-          ]
+          "path": ["jobs", "{{id}}"]
         }
       },
       "response": []
