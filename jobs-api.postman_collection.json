@@ -24,9 +24,6 @@
         }
       ],
       "request": {
-        "auth": {
-          "type": "noauth"
-        },
         "method": "POST",
         "body": {
           "mode": "raw",
@@ -63,9 +60,6 @@
         }
       ],
       "request": {
-        "auth": {
-          "type": "noauth"
-        },
         "method": "POST",
         "body": {
           "mode": "raw",
