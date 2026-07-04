@@ -1,0 +1,141 @@
+openapi: 3.0.0
+info:
+  title: jobApi
+  version: 1.0.0
+servers:
+  - url: http://{{url}}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+paths:
+  /auth/register:
+    post:
+      tags:
+        - default
+      summary: register user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: annah
+                email: robiat10@gmail.com
+                password: robiah12
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /auth/login:
+    post:
+      tags:
+        - default
+      summary: login user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: robiat@gmail.com
+                password: robiah12
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs:
+    post:
+      tags:
+        - default
+      summary: create job
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                company: facebook
+                position: frontend
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: get jobs
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /jobs/{id}:
+    get:
+      tags:
+        - default
+      summary: get job
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    patch:
+      tags:
+        - default
+      summary: update job
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                company: twitter
+                position: full stack
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - default
+      summary: delete job
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+
