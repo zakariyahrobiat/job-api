@@ -3,7 +3,7 @@ info:
   title: jobApi
   version: 1.0.0
 servers:
-  - url: http://{{url}}
+  - url: https://job-api-a0xd.onrender.com/API/v1
 components:
   securitySchemes:
     noauthAuth:
@@ -30,7 +30,7 @@ paths:
       security:
         - noauthAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -50,7 +50,7 @@ paths:
       security:
         - noauthAuth: []
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -78,7 +78,7 @@ paths:
             Bearer
             eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -97,7 +97,7 @@ paths:
             Bearer
             eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -122,7 +122,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -154,7 +154,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
@@ -178,8 +178,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json: {}
-
