@@ -3,7 +3,7 @@ info:
   title: jobApi
   version: 1.0.0
 servers:
-  - url: https://job-api-a0xd.onrender.com/API/v1
+  - url: https://job-api-a0xd.onrender.com/api/v1
 components:
   securitySchemes:
     noauthAuth:
@@ -45,7 +45,7 @@ paths:
             schema:
               type: object
               example:
-                email: robiat10@gmail.com
+                email: robiat@gmail.com
                 password: robiah12
       security:
         - noauthAuth: []
@@ -68,15 +68,7 @@ paths:
                 company: facebook
                 position: frontend
       security:
-        - noauthAuth: []
-      parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: >-
-            Bearer
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+        - bearerAuth: []
       responses:
         "200":
           description: Successful response
@@ -87,15 +79,7 @@ paths:
         - default
       summary: get jobs
       security:
-        - noauthAuth: []
-      parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: >-
-            Bearer
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
+        - bearerAuth: []
       responses:
         "200":
           description: Successful response
@@ -109,13 +93,6 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: >-
-            Bearer
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
         - name: id
           in: path
           schema:
@@ -139,15 +116,8 @@ paths:
                 company: twitter
                 position: full stack
       security:
-        - noauthAuth: []
+        - bearerAuth: []
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: >-
-            Bearer
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
         - name: id
           in: path
           schema:
@@ -165,13 +135,6 @@ paths:
       security:
         - bearerAuth: []
       parameters:
-        - name: Authorization
-          in: header
-          schema:
-            type: string
-          example: >-
-            Bearer
-            eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70
         - name: id
           in: path
           schema:

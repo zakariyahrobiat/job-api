@@ -7,14 +7,6 @@
   },
   "item": [
     {
-      "name": "New Request",
-      "request": {
-        "method": "GET",
-        "header": []
-      },
-      "response": []
-    },
-    {
       "name": "register user",
       "event": [
         {
@@ -36,7 +28,6 @@
           "type": "noauth"
         },
         "method": "POST",
-        "header": [],
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"name\":\"annah\",\"email\":\"robiat10@gmail.com\",\"password\":\"robiah12\"\r\n}",
@@ -76,10 +67,9 @@
           "type": "noauth"
         },
         "method": "POST",
-        "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"email\":\"robiat10@gmail.com\",\"password\":\"robiah12\"\r\n}",
+          "raw": "{\r\n    \"email\":\"robiat@gmail.com\",\"password\":\"robiah12\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -96,18 +86,34 @@
     },
     {
       "name": "create job",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const jsonData = pm.response.json()\r",
+              "\r",
+              "pm.globals.set(\"id\", jsonData.job._id);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "auth": {
-          "type": "noauth"
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
         },
         "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70",
-            "type": "text"
-          }
-        ],
+
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"company\":\"facebook\",\"position\":\"frontend\"\r\n}",
@@ -132,20 +138,17 @@
       },
       "request": {
         "auth": {
-          "type": "noauth"
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
         },
         "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"name\":\"john\",\"email\":\"robiat@gmail.com\",\"password\":\"robiah\"\r\n}"
-        },
+
         "url": {
           "raw": "{{URL}}/jobs",
           "host": ["{{URL}}"],
@@ -171,19 +174,8 @@
           ]
         },
         "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"name\":\"john\",\"email\":\"robiat@gmail.com\",\"password\":\"robiah\"\r\n}"
-        },
         "url": {
-          "raw": "{{URL}}/jobs/:id",
+          "raw": "{{URL}}/jobs/{{id}}",
           "host": ["{{URL}}"],
           "path": ["jobs", "{{id}}"]
         }
@@ -194,16 +186,17 @@
       "name": "update job",
       "request": {
         "auth": {
-          "type": "noauth"
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{accessToken}}",
+              "type": "string"
+            }
+          ]
         },
         "method": "PATCH",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70",
-            "type": "text"
-          }
-        ],
+
         "body": {
           "mode": "raw",
           "raw": "{\r\n    \"company\":\"twitter\",\"position\":\"full stack\"\r\n}",
@@ -214,7 +207,7 @@
           }
         },
         "url": {
-          "raw": "{{URL}}/jobs/:id",
+          "raw": "{{URL}}/jobs/{{id}}",
           "host": ["{{URL}}"],
           "path": ["jobs", "{{id}}"]
         }
@@ -235,24 +228,8 @@
           ]
         },
         "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2YTMwMDU3ZWZkNzU0ODFhOGQ5Y2NiM2MiLCJuYW1lIjoiYW5uYWgiLCJpYXQiOjE3ODE1MzIwMzAsImV4cCI6MTc4NDEyNDAzMH0.A08pJzQTkAyi8UHhafbaHZkY0CmIOgcEzsFjr7MNZ70",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
         "url": {
-          "raw": "{{URL}}/jobs/:id",
+          "raw": "{{URL}}/jobs/{{id}}",
           "path": ["jobs", "{{id}}"]
         }
       },
